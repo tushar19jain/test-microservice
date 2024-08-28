@@ -1,9 +1,8 @@
 import express from 'express';
 const TEST = express();
-const PORT = 5000;
 TEST.get('/test',(req,res)=>{
     res.status(200).send({message:"Working fine with docker !"})
 })
-TEST.listen(PORT,()=>{
+TEST.listen(process.env.PORT || 5000,()=>{
     console.log("RUNNING");
 });
